@@ -25,7 +25,8 @@ SOURCES += \
     Tg.cpp \
     X.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    test_git_class.cpp
 
 HEADERS += \
     Base_func.h \
@@ -43,7 +44,8 @@ HEADERS += \
     Sin.h \
     Tg.h \
     X.h \
-    mainwindow.h
+    mainwindow.h \
+    test_git_class.h
 
 FORMS += \
     mainwindow.ui
