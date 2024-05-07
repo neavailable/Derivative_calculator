@@ -7,7 +7,7 @@ class My_QStr_methods
 {
 private:
     static void swap_symbols(QString &func, const size_t ind1, const size_t ind2);
-    static const QString add_pow_to_name(const QString &func_, const QString &pow);
+    static const QString add_pow_to_name(QString &func_, QString &pow);
 public:
     My_QStr_methods();
 
@@ -18,7 +18,7 @@ public:
 
     static void add_to_qstring(QString &func, const QString &text);
 
-    static void add_func_to_qstr(QString &func, const QString &text, const QString &pow);
+    static void add_func_to_qstr(QString &func, QString &text, QString &pow);
 
     static void swap_to_external_func(QString &func);
 

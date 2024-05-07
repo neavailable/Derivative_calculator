@@ -14,10 +14,10 @@ SOURCES += \
     Cos.cpp \
     Ctg.cpp \
     Dot.cpp \
+    Exp.cpp \
     Func.cpp \
     Func_with_args.cpp \
     Func_without_args.cpp \
-    Ln.cpp \
     Math_operator.cpp \
     My_QStr_methods.cpp \
     Number.cpp \
@@ -25,8 +25,7 @@ SOURCES += \
     Tg.cpp \
     X.cpp \
     main.cpp \
-    mainwindow.cpp \
-    test_git_class.cpp
+    mainwindow.cpp
 
 HEADERS += \
     Base_func.h \
@@ -34,18 +33,17 @@ HEADERS += \
     Cos.h \
     Ctg.h \
     Dot.h \
+    Exp.h \
     Func.h \
     Func_with_args.h \
     Func_without_args.h \
-    Ln.h \
     Math_operator.h \
     My_QStr_methods.h \
     Number.h \
     Sin.h \
     Tg.h \
     X.h \
-    mainwindow.h \
-    test_git_class.h
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui

@@ -18,6 +18,9 @@ const bool Func::is_number(Base_func *func) const
 
 void Func::add_func_to_funcs(Base_func *const func)
 {
+    if (func == nullptr) return;
+
+
     if (head == nullptr)
         head = func, curr_func = head;
 

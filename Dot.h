@@ -6,6 +6,7 @@
 class Dot : public Func_without_args
 {
 private:
+    Base_func *const get_object() override;
     Base_func *const get_object_derivative() override;
 public:
     Dot();
@@ -14,8 +15,6 @@ public:
     Dot(Dot &&)                 = delete;
     Dot &operator=(const Dot &) = delete;
     Dot &operator=(Dot &&)      = delete;
-
-    Base_func *const get_object() override;
 
     ~Dot();
 };

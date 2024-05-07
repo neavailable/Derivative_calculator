@@ -38,7 +38,10 @@ QString &Base_func::get_pow()
 
 void Base_func::add_pow_derivative(Base_func *const curr, Func &derivative_func)
 {
-    if (curr->get_pow() == "1⬚") return;
+    double pow = curr->get_pow().removeLast().toDouble();
+    curr->get_pow().push_back("⬚");
+
+    if (pow == 1) return;
 
     derivative_func.add_func_to_funcs( new Number( curr->get_pow() ) );
 
@@ -120,6 +123,7 @@ void Base_func::make_derivative(Base_func *const curr, Func &derivative_func)
     }
 
     else return;
+
 
     if (curr->arg != nullptr)
     {

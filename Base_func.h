@@ -25,6 +25,7 @@ private:
     void add_pow_derivative(Base_func *const curr, Func &derivative_func);
     void add_args_to_derivative(Base_func *const curr, Func &derivative_func, const bool add_to_qstr) const;
 
+    virtual Base_func *const get_object() = 0;
     virtual Base_func *const get_object_derivative() = 0;
 public:
     Base_func(const QString name_ = "havent modifiable name", const QString pow_ = "1⬚");
@@ -33,8 +34,6 @@ public:
     Base_func(Base_func &&)                 = delete;
     Base_func &operator=(const Base_func &) = delete;
     Base_func &operator=(Base_func &&)      = delete;
-
-    virtual Base_func *const get_object() = 0;
 
     virtual const bool is_arguments() const = 0;
 

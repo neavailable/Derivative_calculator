@@ -10,9 +10,12 @@ void My_QStr_methods::swap_symbols(QString &func, const size_t ind1, const size_
     *(func.begin() + ind1) = temp_str;
 };
 
-const QString My_QStr_methods::add_pow_to_name(const QString &func_, const QString &pow)
+const QString My_QStr_methods::add_pow_to_name(QString &func_, QString &pow)
 {
-    if (pow == "1⬚") return func_;
+    double dpow = pow.removeLast().toDouble();
+    pow.push_back("⬚");
+
+    if (dpow == 1) return func_;
 
     QString func = func_;
 
@@ -20,7 +23,6 @@ const QString My_QStr_methods::add_pow_to_name(const QString &func_, const QStri
     add_to_qstring(func, "^⬚");
     add_to_qstring(func, pow);
     swap_to_external_func(func);
-
 
     return func;
 };
@@ -32,7 +34,7 @@ void My_QStr_methods::add_to_qstring(QString &func, const QString &text)
     func.removeAt(i), func.insert(i, text);
 };
 
-void My_QStr_methods::add_func_to_qstr(QString &func, const QString &text, const QString &pow)
+void My_QStr_methods::add_func_to_qstr(QString &func, QString &text, QString &pow)
 {
     const QString name_with_pow = add_pow_to_name(text, pow);
     add_to_qstring( func, name_with_pow );

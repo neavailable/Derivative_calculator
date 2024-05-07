@@ -9,6 +9,7 @@ class Sin;
 class Cos : public Func_with_args
 {
 private:
+    Base_func *const get_object() override;
     Base_func *const get_object_derivative() override;
 public:
     Cos(const QString pow = "1⬚");
@@ -17,8 +18,6 @@ public:
     Cos(Cos &&)                 = delete;
     Cos &operator=(const Cos &) = delete;
     Cos &operator=(Cos &&)      = delete;
-
-    Base_func *const get_object() override;
 
     ~Cos();
 };

@@ -8,7 +8,7 @@ class Base_operation
 private:
     QString name;
 public:
-    Base_operation(const QString name_ = "haven't modifiable name");
+    Base_operation(const QString name_ = "havent modifiable name");
 
     Base_operation(const Base_operation &)            = delete;
     Base_operation(Base_operation &&)                 = delete;

@@ -6,6 +6,7 @@
 class X : public Func_without_args
 {
 private:
+    Base_func *const get_object() override;
     Base_func *const get_object_derivative() override;
 public:
     X(const QString pow = "1⬚");
@@ -14,8 +15,6 @@ public:
     X(X&&)                 = delete;
     X &operator=(const X&) = delete;
     X &operator=(X&&)      = delete;
-
-    Base_func *const get_object() override;
 
     ~X();
 };
