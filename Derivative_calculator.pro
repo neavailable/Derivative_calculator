@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     Base_func.cpp \
     Base_operation.cpp \
+    Control_buttons.cpp \
     Cos.cpp \
     Ctg.cpp \
     Dot.cpp \
@@ -30,6 +31,7 @@ SOURCES += \
 HEADERS += \
     Base_func.h \
     Base_operation.h \
+    Control_buttons.h \
     Cos.h \
     Ctg.h \
     Dot.h \

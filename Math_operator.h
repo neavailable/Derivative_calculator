@@ -15,7 +15,7 @@ class Plus;
 
 class Math_operator : public Base_operation
 {
-protected:
+private:
     Base_func *left_arg, *right_arg;
 public:
     Math_operator(const QString name_ = "havent modifiable name");
@@ -25,13 +25,13 @@ public:
     Math_operator &operator=(const Math_operator &) = delete;
     Math_operator &operator=(Math_operator &&)      = delete;
 
-    const bool can_get_derivative() const;
+    const bool can_get_derivative() const override;
 
     Base_func *&get_left_arg();
     Base_func *&get_right_arg();
 
     virtual Math_operator *const get_object() = 0;
-    virtual Base_func *get_derivative_for_operands(Func &) = 0;
+    virtual Base_func *get_derivative_for_operands(Func &derivative_func) = 0;
 
     virtual ~Math_operator() = 0;
 };
@@ -50,8 +50,8 @@ public:
     Plus &operator=(const Plus &) = delete;
     Plus &operator=(Plus &&)      = delete;
 
-    Math_operator *const get_object();
-    Base_func *get_derivative_for_operands(Func &derivative_func);
+    Math_operator *const get_object() override;
+    Base_func *get_derivative_for_operands(Func &derivative_func) override;
 
     ~Plus();
 };
@@ -70,8 +70,8 @@ public:
     Minus &operator=(const Minus &) = delete;
     Minus &operator=(Minus &&)      = delete;
 
-    Math_operator *const get_object();
-    Base_func *get_derivative_for_operands(Func &derivative_func);
+    Math_operator *const get_object() override;
+    Base_func *get_derivative_for_operands(Func &derivative_func) override;
 
     ~Minus();
 };
@@ -90,8 +90,8 @@ public:
     Multiply &operator=(const Multiply &) = delete;
     Multiply &operator=(Multiply &&)      = delete;
 
-    Math_operator *const get_object();
-    Base_func *get_derivative_for_operands(Func &derivative_func);
+    Math_operator *const get_object() override;
+    Base_func *get_derivative_for_operands(Func &derivative_func) override;
 
     ~Multiply();
 };
@@ -104,13 +104,13 @@ class Division : public Math_operator
 public:
     Division();
 
-    Division(const Multiply &)            = delete;
-    Division(Multiply &&)                 = delete;
-    Division &operator=(const Multiply &) = delete;
-    Division &operator=(Multiply &&)      = delete;
+    Division(const Division &)            = delete;
+    Division(Division &&)                 = delete;
+    Division &operator=(const Division &) = delete;
+    Division &operator=(Division &&)      = delete;
 
-    Math_operator *const get_object();
-    Base_func *get_derivative_for_operands(Func &derivative_func);
+    Math_operator *const get_object() override;
+    Base_func *get_derivative_for_operands(Func &derivative_func) override;
 
     ~Division();
 };

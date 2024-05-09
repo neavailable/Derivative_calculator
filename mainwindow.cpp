@@ -2,30 +2,32 @@
 
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), enetered_pow{ false }
+    : QMainWindow(parent), ui(new Ui::MainWindow),
+      сontrol_buttons{nullptr}, enetered_pow{ false }
 {
     ui->setupUi(this);
 
-    buttons_in_array = new Buttons_in_array(ui);
-
     ui->enter_label->setText( func.get_qstr_func() );
 
-    buttons_in_array->block_at_beginning();
+    сontrol_buttons = new Control_buttons(ui),
+    сontrol_buttons->block_at_beginning();
 };
 
 void MainWindow::on_funcs_clicked(Base_func *func_)
 {
-    func_->is_arguments() ? buttons_in_array->block_for_funcs_with_args()
-                          : buttons_in_array->block_for_numbers();
+    func_->is_arguments() ? сontrol_buttons->block_for_funcs_with_args()
+                          : сontrol_buttons->block_for_numbers();
 
     func.add_func_to_funcs(func_);
 
     ui->enter_label->setText( func.get_qstr_func() );
+
+    if (enetered_pow) сontrol_buttons->block_for_pow();
 };
 
 void MainWindow::on_operators_clicked(Math_operator *math_operator)
 {
-    buttons_in_array->block_for_operators();
+    сontrol_buttons->block_for_operators();
 
     func.add_operator_to_funcs(math_operator);
 
@@ -63,7 +65,7 @@ void MainWindow::on_x_butt_clicked()
 {
     on_funcs_clicked(new X);
 
-    buttons_in_array->block_for_x();
+    сontrol_buttons->block_for_x();
 };
 
 void MainWindow::on_butt_0_clicked()
@@ -120,7 +122,7 @@ void MainWindow::on_dot_butt_clicked()
 {
     on_funcs_clicked(new Dot);
 
-    buttons_in_array->block_for_dot();
+    сontrol_buttons->block_for_dot();
 };
 
 void MainWindow::on_plus_butt_clicked()
@@ -149,33 +151,53 @@ void MainWindow::on_to_ext_func_butt_clicked()
 
     ui->enter_label->setText( func.get_qstr_func() );
 
-    buttons_in_array->block_for_to_ext_func();
+    if (enetered_pow)
+    {
+        func.get_curr_func_is_arguments() ? сontrol_buttons->block_for_funcs_with_args()
+                                          : сontrol_buttons->block_for_x();
+
+        ui->pow_butt->setEnabled(false);
+
+        enetered_pow = false;
+    }
+    else
+        сontrol_buttons->block_for_to_ext_func();
+
 };
 
 void MainWindow::on_pow_butt_clicked()
 {
-    buttons_in_array->block_for_pow();
+    сontrol_buttons->block_for_pow();
     func.enter_pow();
 
     ui->enter_label->setText( func.get_qstr_func() );
+
+    enetered_pow = true;
 };
 
 void MainWindow::on_enter_butt_clicked()
 {
     func.get_derivative_and_print(derivative);
 
+    My_QStr_methods::add_to_qstring(func.get_qstr_func(), "");
+
+    ui->enter_label->setText( func.get_qstr_func() );
     ui->result_label->setText( derivative.get_qstr_func() );
+
+    сontrol_buttons->block_for_enter();
 };
 
 void MainWindow::on_AC_butt_clicked()
 {
-    buttons_in_array->block_at_beginning();
+    сontrol_buttons->block_at_beginning();
 
     func.clear();
     derivative.clear();
 
     ui->enter_label->setText("⬚");
     ui->result_label->clear();
+
+    enetered_pow = false;
 };
 
 MainWindow::~MainWindow()
@@ -183,114 +205,5 @@ MainWindow::~MainWindow()
     on_AC_butt_clicked();
 
     delete ui;
-    delete buttons_in_array;
+    delete сontrol_buttons;
 };
-
-
-
-
-
-
-Buttons_in_array::Buttons_in_array(Ui::MainWindow *ui_)
-    : ui{ ui_ }, all_butts
-    {
-        ui->sin_butt, ui->cos_butt, ui->tg_butt, ui->ctg_butt, ui->exp_butt, ui->x_butt,
-        ui->butt_0, ui->butt_1, ui->butt_2, ui->butt_3, ui->butt_4, ui->butt_5, ui->butt_6, ui->butt_7, ui->butt_8, ui->butt_9,
-        ui->plus_butt, ui->minus_butt, ui->multiply_butt, ui->division_butt, ui->enter_butt,
-        ui->pow_butt, ui->to_ext_func_butt, ui->AC_butt, ui->dot_butt
-    },
-    funcs_with_args_butts { ui->sin_butt, ui->cos_butt, ui->tg_butt, ui->ctg_butt, ui->exp_butt },
-    digits_buts { ui->butt_0, ui->butt_1, ui->butt_2, ui->butt_3, ui->butt_4, ui->butt_5, ui->butt_6, ui->butt_7, ui->butt_8, ui->butt_9 },
-    operators_butts { ui->plus_butt, ui->minus_butt, ui->multiply_butt, ui->division_butt, ui->enter_butt },
-    other_butts { ui->pow_butt, ui->to_ext_func_butt, ui->dot_butt } {};
-
-
-void Buttons_in_array::un_block_buttons(QPushButton *buttons[], const size_t size, const bool un_block)
-{
-    for (size_t i = 0; i < size; ++i) buttons[i]->setEnabled(un_block);
-};
-
-void Buttons_in_array::block_at_beginning()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    ui->dot_butt->setEnabled(false),
-    ui->pow_butt->setEnabled(false);
-};
-
-void Buttons_in_array::block_for_funcs_with_args()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    un_block_buttons(operators_butts, operators_butts_size, false),
-        ui->to_ext_func_butt->setEnabled(false),
-    ui->dot_butt->setEnabled(false);
-};
-
-void Buttons_in_array::block_for_numbers()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-    ui->x_butt->setEnabled(false),
-    ui->pow_butt->setEnabled(false);
-};
-
-void Buttons_in_array::block_for_dot()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-    un_block_buttons(operators_butts, operators_butts_size, false),
-    un_block_buttons(other_butts, other_butts_size, false);
-};
-
-void Buttons_in_array::block_for_x()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-    un_block_buttons(digits_buts, digits_buts_size, false),
-    ui->dot_butt->setEnabled(false);
-};
-
-void Buttons_in_array::block_for_operators()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    un_block_buttons(other_butts, other_butts_size, false),
-    ui->AC_butt->setEnabled(false),
-    un_block_buttons(operators_butts, operators_butts_size, false);
-};
-
-void Buttons_in_array::block_for_pow()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-    ui->x_butt->setEnabled(false),
-    un_block_buttons(operators_butts, operators_butts_size, false),
-    ui->pow_butt->setEnabled(false);
-};
-
-void Buttons_in_array::block_for_to_ext_func()
-{
-    un_block_buttons(all_butts, all_butts_size, true);
-
-    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-    ui->x_butt->setEnabled(false),
-    un_block_buttons(digits_buts, digits_buts_size, false),
-    ui->pow_butt->setEnabled(false),
-    ui->dot_butt->setEnabled(false);
-};
-
-void Buttons_in_array::block_for_from_pow_to_func()
-{
-    //un_block_buttons(all_butts, all_butts_size, true);
-
-    //un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-    //un_block_buttons(operators_butts, operators_butts_size, false),
-    //    ui->
-};
-
-Buttons_in_array::~Buttons_in_array() = default;

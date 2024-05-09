@@ -58,6 +58,13 @@ void Base_func::add_pow_derivative(Base_func *const curr, Func &derivative_func)
     derivative_func.add_operator_to_funcs(new Multiply);
 };
 
+// here we count derivative for func in power. For example:
+// ( cos^3(something) )' = 3 * cos^2(something) * ...
+//                            ^         ^          ^  ^
+//                            |         |          |  |
+//                         line 46   line 49  line 58 |
+// But if power = 1 we skip all of this, so we go at this place
+
 void Base_func::add_args_to_derivative(Base_func *const curr, Func &derivative_func, const bool add_to_qstr) const
 {
     if (curr != nullptr)
@@ -95,6 +102,10 @@ void Base_func::add_args_to_derivative(Base_func *const curr, Func &derivative_f
     }
 };
 
+// in this method we go through all branches which are on the left
+// (arguments) and on the right (operators).
+// depends on value of add_to_qstr we will work with QString or other func (tree)
+
 Base_func *Base_func::add_func_to_derivative(Func &derivative_func, const bool add_to_qstr)
 {
     if (add_to_qstr)
@@ -112,6 +123,8 @@ Base_func *Base_func::add_func_to_derivative(Func &derivative_func, const bool a
         return func;
     }
 };
+
+// this method simply add func (without args and operators) to the tree (if !add_to_qstr)
 
 void Base_func::make_derivative(Base_func *const curr, Func &derivative_func)
 {
@@ -139,6 +152,18 @@ void Base_func::make_derivative(Base_func *const curr, Func &derivative_func)
     if (curr->right_operator != nullptr)
         make_derivative(curr->right_operator->get_derivative_for_operands(derivative_func), derivative_func);
 };
+
+// this is main func for counting derivative.
+// first if is only for counting derivative of first func.
+// second is for add to tree all arguments from what entered
+// user to func, which was created in first if.
+// next we add to the tree multiply and recursively starting
+// counting derivative from arg, which entered user.
+// so we returning to first if but with argument.
+// in third if we call method, which can count derivative
+// from left and right operands. for example derivative from ax + bx
+// is a + b, so to the tree we only add +. Other case will be if user
+// entered a * b or a / b, but it was clarified Multiply and Division classes.
 
 Base_func::~Base_func() = default;
 
@@ -168,36 +193,14 @@ Base_func *const Number::get_object()
 
 Base_func *const Number::get_object_derivative()
 {
-    return new Number("0⬚");
+    return new Number("0⬚", "1⬚");
 };
 
 Number::~Number() = default;
 
 
-// 0) додавання функції а не кустрінга -  ☑
+// 1) здєлай меседж бох -
 
-// 1) здєлай ділення - ☑
+// 2) зроби шоб можна було вйобувать мінус перед виразом -
 
-// 2) заблокуй краші -
-
-// 3) здєлай меседж бох -
-
-// 4) здєлай можливість вводити цифри - ☑
-
-// 5) здєлай можливість вводити і обробляти кому - ☑
-
-// 6) зроби шоб можна було вйобувать мінус перед виразом -
-
-// 7) здєлай степінь - ☑
-
-// 8) здєлай корінь -
-
-// 9) здєлай тг -
-
-// 10) здєлай ктг -
-
-// 11) здєлай лн -
-
-// 12) здєлай адекватний інтерфейс -
-
-// 13) здєлай множення яке би працювало з >2 аргументами -
+// 3) здєлай навяси -

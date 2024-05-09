@@ -42,7 +42,7 @@ public:
     Math_operator *&get_left_operator();
     Math_operator *&get_right_operator();
 
-    const bool can_get_derivative() const;
+    const bool can_get_derivative() const override;
 
     QString &get_pow();
 

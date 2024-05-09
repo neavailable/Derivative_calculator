@@ -11,10 +11,10 @@ private:
 public:
     X(const QString pow = "1⬚");
 
-    X(const X&)            = delete;
-    X(X&&)                 = delete;
-    X &operator=(const X&) = delete;
-    X &operator=(X&&)      = delete;
+    X(const X &)            = delete;
+    X(X &&)                 = delete;
+    X &operator=(const X &) = delete;
+    X &operator=(X &&)      = delete;
 
     ~X();
 };

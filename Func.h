@@ -34,10 +34,11 @@ public:
     void go_to_external_func();
     void go_to_func(const Base_func *const &func);
 
-
     QString &get_qstr_func();
 
     void get_derivative_and_print(Func &func);
+
+    const bool get_curr_func_is_arguments();
 
     void clear();
 
