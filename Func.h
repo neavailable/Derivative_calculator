@@ -3,6 +3,7 @@
 #include "Base_func.h"
 #include "Math_operator.h"
 #include "My_QStr_methods.h"
+#include "Control_buttons.h"
 
 
 class Base_func;
@@ -32,6 +33,7 @@ public:
 
     void enter_pow();
     void go_to_external_func();
+    void block_to_ext_func_butt(Control_buttons *control_buttons, const bool entered_pow_);
     void go_to_func(const Base_func *const &func);
 
     QString &get_qstr_func();

@@ -22,6 +22,8 @@ private:
                 *other_butts          [other_butts_size];
 
     void un_block_buttons(QPushButton *buttons[], const size_t size, const bool un_block);
+    void block_all();
+    void unblock_all();
 public:
     Control_buttons(Ui::MainWindow *ui_ = nullptr);
 
@@ -32,7 +34,7 @@ public:
 
     void block_at_beginning();
     void block_for_funcs_with_args();
-    void block_for_numbers();
+    void block_for_funcs_without_args();
     void block_for_dot();
     void block_for_x();
     void block_for_operators();

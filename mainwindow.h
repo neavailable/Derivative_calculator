@@ -19,6 +19,7 @@ namespace Ui
 };
 QT_END_NAMESPACE
 
+
 class MainWindow : public QMainWindow
 {
 private:
@@ -27,9 +28,9 @@ private:
 
     Func func, derivative;
 
-    Control_buttons *сontrol_buttons;
+    Control_buttons *control_buttons;
 
-    bool enetered_pow;
+    bool entered_pow;
 
     void on_funcs_clicked(Base_func *func);
     void on_operators_clicked(Math_operator *math_operator);

@@ -2,32 +2,34 @@
 
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow),
-      сontrol_buttons{nullptr}, enetered_pow{ false }
+    : QMainWindow(parent), ui(new Ui::MainWindow), entered_pow{ false }
 {
     ui->setupUi(this);
 
     ui->enter_label->setText( func.get_qstr_func() );
 
-    сontrol_buttons = new Control_buttons(ui),
-    сontrol_buttons->block_at_beginning();
+    control_buttons = new Control_buttons(ui);
+
+    ui->enter_label->setText( func.get_qstr_func() );
+
+    control_buttons->block_at_beginning();
 };
 
 void MainWindow::on_funcs_clicked(Base_func *func_)
 {
-    func_->is_arguments() ? сontrol_buttons->block_for_funcs_with_args()
-                          : сontrol_buttons->block_for_numbers();
+    func_->is_arguments() ? control_buttons->block_for_funcs_with_args()
+                          : control_buttons->block_for_funcs_without_args();
 
     func.add_func_to_funcs(func_);
 
     ui->enter_label->setText( func.get_qstr_func() );
 
-    if (enetered_pow) сontrol_buttons->block_for_pow();
+    if (entered_pow) control_buttons->block_for_pow();
 };
 
 void MainWindow::on_operators_clicked(Math_operator *math_operator)
 {
-    сontrol_buttons->block_for_operators();
+    control_buttons->block_for_operators();
 
     func.add_operator_to_funcs(math_operator);
 
@@ -65,7 +67,7 @@ void MainWindow::on_x_butt_clicked()
 {
     on_funcs_clicked(new X);
 
-    сontrol_buttons->block_for_x();
+    control_buttons->block_for_x();
 };
 
 void MainWindow::on_butt_0_clicked()
@@ -122,7 +124,7 @@ void MainWindow::on_dot_butt_clicked()
 {
     on_funcs_clicked(new Dot);
 
-    сontrol_buttons->block_for_dot();
+    control_buttons->block_for_dot();
 };
 
 void MainWindow::on_plus_butt_clicked()
@@ -147,32 +149,24 @@ void MainWindow::on_division_butt_clicked()
 
 void MainWindow::on_to_ext_func_butt_clicked()
 {
+    func.block_to_ext_func_butt(control_buttons, entered_pow);
+
     func.go_to_external_func();
 
     ui->enter_label->setText( func.get_qstr_func() );
 
-    if (enetered_pow)
-    {
-        func.get_curr_func_is_arguments() ? сontrol_buttons->block_for_funcs_with_args()
-                                          : сontrol_buttons->block_for_x();
-
-        ui->pow_butt->setEnabled(false);
-
-        enetered_pow = false;
-    }
-    else
-        сontrol_buttons->block_for_to_ext_func();
-
+    entered_pow = false;
 };
 
 void MainWindow::on_pow_butt_clicked()
 {
-    сontrol_buttons->block_for_pow();
+    control_buttons->block_for_pow();
+
     func.enter_pow();
 
     ui->enter_label->setText( func.get_qstr_func() );
 
-    enetered_pow = true;
+    entered_pow = true;
 };
 
 void MainWindow::on_enter_butt_clicked()
@@ -184,12 +178,12 @@ void MainWindow::on_enter_butt_clicked()
     ui->enter_label->setText( func.get_qstr_func() );
     ui->result_label->setText( derivative.get_qstr_func() );
 
-    сontrol_buttons->block_for_enter();
+    control_buttons->block_for_enter();
 };
 
 void MainWindow::on_AC_butt_clicked()
 {
-    сontrol_buttons->block_at_beginning();
+    control_buttons->block_at_beginning();
 
     func.clear();
     derivative.clear();
@@ -197,7 +191,7 @@ void MainWindow::on_AC_butt_clicked()
     ui->enter_label->setText("⬚");
     ui->result_label->clear();
 
-    enetered_pow = false;
+    entered_pow = false;
 };
 
 MainWindow::~MainWindow()
@@ -205,5 +199,5 @@ MainWindow::~MainWindow()
     on_AC_butt_clicked();
 
     delete ui;
-    delete сontrol_buttons;
+    delete control_buttons;
 };

@@ -20,9 +20,19 @@ void Control_buttons::un_block_buttons(QPushButton *buttons[], const size_t size
     for (size_t i = 0; i < size; ++i) buttons[i]->setEnabled(un_block);
 };
 
-void Control_buttons::block_at_beginning()
+void Control_buttons::block_all()
+{
+    un_block_buttons(all_butts, all_butts_size, false);
+};
+
+void Control_buttons::unblock_all()
 {
     un_block_buttons(all_butts, all_butts_size, true);
+};
+
+void Control_buttons::block_at_beginning()
+{
+    unblock_all();
 
     un_block_buttons(operators_butts, operators_butts_size, false),
     ui->dot_butt->setEnabled(false),
@@ -31,16 +41,16 @@ void Control_buttons::block_at_beginning()
 
 void Control_buttons::block_for_funcs_with_args()
 {
-    un_block_buttons(all_butts, all_butts_size, true);
+    unblock_all();
 
     un_block_buttons(operators_butts, operators_butts_size, false),
     ui->to_ext_func_butt->setEnabled(false),
     ui->dot_butt->setEnabled(false);
 };
 
-void Control_buttons::block_for_numbers()
+void Control_buttons::block_for_funcs_without_args()
 {
-    un_block_buttons(all_butts, all_butts_size, true);
+    unblock_all();
 
     un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
     ui->x_butt->setEnabled(false),
@@ -49,16 +59,17 @@ void Control_buttons::block_for_numbers()
 
 void Control_buttons::block_for_dot()
 {
-    un_block_buttons(all_butts, all_butts_size, true);
+    unblock_all();
 
-    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-    un_block_buttons(operators_butts, operators_butts_size, false),
+    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false);
+    ui->x_butt->setEnabled(false);
+    un_block_buttons(operators_butts, operators_butts_size, false);
     un_block_buttons(other_butts, other_butts_size, false);
 };
 
 void Control_buttons::block_for_x()
 {
-    un_block_buttons(all_butts, all_butts_size, true);
+    unblock_all();
 
     un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
     un_block_buttons(digits_buts, digits_buts_size, false),
@@ -77,7 +88,7 @@ void Control_buttons::block_for_operators()
 
 void Control_buttons::block_for_pow()
 {
-    un_block_buttons(all_butts, all_butts_size, true);
+    unblock_all();
 
     un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
     ui->x_butt->setEnabled(false),
@@ -89,16 +100,17 @@ void Control_buttons::block_for_to_ext_func()
 {
     un_block_buttons(all_butts, all_butts_size, true);
 
-    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
-        ui->x_butt->setEnabled(false),
-        un_block_buttons(digits_buts, digits_buts_size, false),
-        ui->pow_butt->setEnabled(false),
-        ui->dot_butt->setEnabled(false);
+    un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false);
+    ui->x_butt->setEnabled(false);
+    un_block_buttons(digits_buts, digits_buts_size, false);
+
+    ui->pow_butt->setEnabled(false);
+    ui->dot_butt->setEnabled(false);
 };
 
 void Control_buttons::block_for_from_pow_to_func()
 {
-    un_block_buttons(all_butts, all_butts_size, true);
+    unblock_all();
 
     un_block_buttons(funcs_with_args_butts, funcs_with_args_butts_size, false),
     un_block_buttons(operators_butts, operators_butts_size, false);
@@ -106,7 +118,7 @@ void Control_buttons::block_for_from_pow_to_func()
 
 void Control_buttons::block_for_enter()
 {
-    un_block_buttons(all_butts, all_butts_size, false);
+    block_all();
 
     ui->AC_butt->setEnabled(true);
 };

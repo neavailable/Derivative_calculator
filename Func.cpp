@@ -89,7 +89,14 @@ void Func::enter_pow()
 
 void Func::go_to_external_func()
 {
-    if (!entered_pow)
+    if (entered_pow)
+    {
+        if ( curr_func->is_arguments() )
+            My_QStr_methods::swap_to_external_func(qstr_func);
+
+        entered_pow = false, entered_func = true;
+    }
+    else
     {
         while(curr_func != head)
             if (curr_func->get_external_func() != nullptr)
@@ -103,18 +110,19 @@ void Func::go_to_external_func()
             {
                 curr_func = curr_func->get_left_operator()->get_left_arg();
             }
-
-    }
-    else
-    {
-        if ( curr_func->is_arguments() )
-            My_QStr_methods::swap_to_external_func(qstr_func);
-
-        entered_pow = false, entered_func = true;
     }
 };
 
 // go to external func or end entering pow
+
+void Func::block_to_ext_func_butt(Control_buttons *control_buttons, const bool entered_pow_)
+{
+    entered_pow_ ?
+    curr_func->is_arguments() ?
+        control_buttons->block_for_funcs_with_args() :
+        control_buttons->block_for_funcs_without_args() :
+    control_buttons->block_for_to_ext_func();
+};
 
 void Func::go_to_func(const Base_func *const &func)
 {
