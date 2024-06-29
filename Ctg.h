@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Sin.h"
+#include "Func_with_args.h"
 
 
 class Ctg : public Func_with_args

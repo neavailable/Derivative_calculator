@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Base_func.h"
+#include "Func_without_args.h"
 
 
 class X : public Func_without_args

@@ -1,4 +1,5 @@
 #include "X.h"
+#include "Number.h"
 
 
 X::X(const QString pow) : Func_without_args("x⬚", pow) {};
@@ -11,6 +12,6 @@ Base_func *const X::get_object()
 Base_func *const X::get_object_derivative()
 {
     return new Number;
-}
+};
 
 X::~X() = default;

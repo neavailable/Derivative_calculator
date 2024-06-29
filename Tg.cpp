@@ -1,4 +1,5 @@
 #include "Tg.h"
+#include "Cos.h"
 
 
 Tg::Tg(const QString pow) : Func_with_args("tg(⬚)", pow) {};

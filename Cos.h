@@ -1,10 +1,7 @@
 #pragma once
 
 #include "Func_with_args.h"
-#include "Sin.h"
 
-
-class Sin;
 
 class Cos : public Func_with_args
 {

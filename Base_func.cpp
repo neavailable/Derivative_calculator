@@ -1,4 +1,7 @@
 #include "Base_func.h"
+#include "Number.h"
+#include "My_QStr_methods.h"
+#include "Multiply.h"
 
 
 Base_func::Base_func(const QString name_, const QString pow_) :
@@ -166,37 +169,6 @@ void Base_func::make_derivative(Base_func *const curr, Func &derivative_func)
 // entered a * b or a / b, but it was clarified Multiply and Division classes.
 
 Base_func::~Base_func() = default;
-
-
-
-
-
-Func_without_args::Func_without_args(const QString name, const QString pow) : Base_func(name, pow) {};
-
-const bool Func_without_args::is_arguments() const
-{
-    return false;
-};
-
-Func_without_args::~Func_without_args() = default;
-
-
-
-
-
-Number::Number(const QString number, const QString pow) : Func_without_args(number, pow) {};
-
-Base_func *const Number::get_object()
-{
-    return new Number( get_qstr_name(), get_pow() );
-};
-
-Base_func *const Number::get_object_derivative()
-{
-    return new Number("0⬚", "1⬚");
-};
-
-Number::~Number() = default;
 
 
 // 1) здєлай меседж бох -

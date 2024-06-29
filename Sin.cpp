@@ -1,4 +1,5 @@
 #include "Sin.h"
+#include "Cos.h"
 
 
 Sin::Sin(const QString pow) : Func_with_args("sin(⬚)", pow) {};

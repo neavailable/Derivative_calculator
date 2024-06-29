@@ -11,8 +11,6 @@ class Base_func;
 
 class Func;
 
-class Plus;
-
 class Math_operator : public Base_operation
 {
 private:
@@ -34,83 +32,4 @@ public:
     virtual Base_func *get_derivative_for_operands(Func &derivative_func) = 0;
 
     virtual ~Math_operator() = 0;
-};
-
-
-
-
-
-class Plus : public Math_operator
-{
-public:
-    Plus();
-
-    Plus(const Plus &)            = delete;
-    Plus(Plus &&)                 = delete;
-    Plus &operator=(const Plus &) = delete;
-    Plus &operator=(Plus &&)      = delete;
-
-    Math_operator *const get_object() override;
-    Base_func *get_derivative_for_operands(Func &derivative_func) override;
-
-    ~Plus();
-};
-
-
-
-
-
-class Minus : public Math_operator
-{
-public:
-    Minus();
-
-    Minus(const Minus &)            = delete;
-    Minus(Minus &&)                 = delete;
-    Minus &operator=(const Minus &) = delete;
-    Minus &operator=(Minus &&)      = delete;
-
-    Math_operator *const get_object() override;
-    Base_func *get_derivative_for_operands(Func &derivative_func) override;
-
-    ~Minus();
-};
-
-
-
-
-
-class Multiply : public Math_operator
-{
-public:
-    Multiply();
-
-    Multiply(const Multiply &)            = delete;
-    Multiply(Multiply &&)                 = delete;
-    Multiply &operator=(const Multiply &) = delete;
-    Multiply &operator=(Multiply &&)      = delete;
-
-    Math_operator *const get_object() override;
-    Base_func *get_derivative_for_operands(Func &derivative_func) override;
-
-    ~Multiply();
-};
-
-
-
-
-class Division : public Math_operator
-{
-public:
-    Division();
-
-    Division(const Division &)            = delete;
-    Division(Division &&)                 = delete;
-    Division &operator=(const Division &) = delete;
-    Division &operator=(Division &&)      = delete;
-
-    Math_operator *const get_object() override;
-    Base_func *get_derivative_for_operands(Func &derivative_func) override;
-
-    ~Division();
 };

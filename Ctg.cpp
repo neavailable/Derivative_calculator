@@ -1,4 +1,5 @@
 #include "Ctg.h"
+#include "Sin.h"
 
 
 Ctg::Ctg(const QString pow) : Func_with_args("ctg(⬚)", pow) {};

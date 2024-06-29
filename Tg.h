@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cos.h"
+#include "Func_with_args.h"
 
 
 class Tg : public Func_with_args

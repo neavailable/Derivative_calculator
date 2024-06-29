@@ -14,14 +14,18 @@ SOURCES += \
     Control_buttons.cpp \
     Cos.cpp \
     Ctg.cpp \
+    Division.cpp \
     Dot.cpp \
     Exp.cpp \
     Func.cpp \
     Func_with_args.cpp \
     Func_without_args.cpp \
     Math_operator.cpp \
+    Minus.cpp \
+    Multiply.cpp \
     My_QStr_methods.cpp \
     Number.cpp \
+    Plus.cpp \
     Sin.cpp \
     Tg.cpp \
     X.cpp \
@@ -34,14 +38,18 @@ HEADERS += \
     Control_buttons.h \
     Cos.h \
     Ctg.h \
+    Division.h \
     Dot.h \
     Exp.h \
     Func.h \
     Func_with_args.h \
     Func_without_args.h \
     Math_operator.h \
+    Minus.h \
+    Multiply.h \
     My_QStr_methods.h \
     Number.h \
+    Plus.h \
     Sin.h \
     Tg.h \
     X.h \

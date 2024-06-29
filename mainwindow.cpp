@@ -1,4 +1,16 @@
 #include "mainwindow.h"
+#include "Sin.h"
+#include "Cos.h"
+#include "Tg.h"
+#include "Ctg.h"
+#include "Exp.h"
+#include "X.h"
+#include "Number.h"
+#include "Plus.h"
+#include "Minus.h"
+#include "Multiply.h"
+#include "Division.h"
+#include "Dot.h"
 
 
 MainWindow::MainWindow(QWidget *parent)

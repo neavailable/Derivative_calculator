@@ -2,7 +2,6 @@
 
 #include "Base_func.h"
 #include "Math_operator.h"
-#include "My_QStr_methods.h"
 #include "Control_buttons.h"
 
 

@@ -1,6 +1,7 @@
 #include "Dot.h"
 
-Dot::Dot() : Func_without_args(".⬚") {};
+
+Dot::Dot() : Func_without_args(".⬚", "") {};
 
 Base_func *const Dot::get_object()
 {

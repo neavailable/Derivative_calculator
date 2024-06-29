@@ -2,12 +2,6 @@
 
 #include <QMainWindow>
 #include "ui_mainwindow.h"
-#include "Tg.h"
-#include "Ctg.h"
-#include "Exp.h"
-#include "X.h"
-#include "Number.h"
-#include "Dot.h"
 #include "Func.h"
 #include "Control_buttons.h"
 
@@ -18,7 +12,6 @@ namespace Ui
     class MainWindow;
 };
 QT_END_NAMESPACE
-
 
 class MainWindow : public QMainWindow
 {
