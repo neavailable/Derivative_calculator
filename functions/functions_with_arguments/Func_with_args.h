@@ -1,7 +1,6 @@
 #pragma once
 
-#include "Base_func.h"
-#include "My_QStr_methods.h"
+#include "functions/base_function/Base_func.h"
 
 
 class Func_with_args : public Base_func

@@ -1,10 +1,8 @@
 #pragma once
 
-#pragma once
-
-#include "Base_operation.h"
-#include "Base_func.h"
-#include "Func.h"
+#include "../base_class/Base_operation.h"
+#include "../functions/base_function/Base_func.h"
+#include "../derivated_func/Func.h"
 
 
 class Base_func;

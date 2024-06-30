@@ -1,5 +1,5 @@
 #include "Func.h"
-#include "My_QStr_methods.h"
+#include "../my_qstr_methods/My_QStr_methods.h"
 
 
 Func::Func() : head { nullptr }, curr_func { nullptr }, entered_func { true },

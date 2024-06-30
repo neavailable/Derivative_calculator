@@ -2,8 +2,8 @@
 
 #include <QMainWindow>
 #include "ui_mainwindow.h"
-#include "Func.h"
-#include "Control_buttons.h"
+#include "derivated_func/Func.h"
+#include "control_buttons/Control_buttons.h"
 
 
 QT_BEGIN_NAMESPACE

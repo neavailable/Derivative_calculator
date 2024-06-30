@@ -1,7 +1,7 @@
 #include "Base_func.h"
-#include "Number.h"
-#include "My_QStr_methods.h"
-#include "Multiply.h"
+#include "functions/functions_without_arguments/Number.h"
+#include "../../my_qstr_methods/My_QStr_methods.h"
+#include "operators/Multiply.h"
 
 
 Base_func::Base_func(const QString name_, const QString pow_) :

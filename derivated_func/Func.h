@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Base_func.h"
-#include "Math_operator.h"
-#include "Control_buttons.h"
+#include "functions/base_function/Base_func.h"
+#include "operators/Math_operator.h"
+#include "control_buttons/Control_buttons.h"
 
 
 class Base_func;

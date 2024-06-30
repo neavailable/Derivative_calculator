@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Base_operation.h"
-#include "Math_operator.h"
-#include "Func.h"
+#include "base_class/Base_operation.h"
+#include "operators/Math_operator.h"
+#include "../../derivated_func/Func.h"
 
 
 class Math_operator;
