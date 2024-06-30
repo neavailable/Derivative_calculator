@@ -26,7 +26,7 @@ private:
     bool entered_pow;
 
     void on_funcs_clicked(Base_func *func);
-    void on_operators_clicked(Math_operator *math_operator);
+    void on_operators_clicked(Operator *math_operator);
 private slots:
     void on_sin_butt_clicked();
     void on_cos_butt_clicked();

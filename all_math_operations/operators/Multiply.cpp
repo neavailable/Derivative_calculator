@@ -2,9 +2,9 @@
 #include "Plus.h"
 
 
-Multiply::Multiply() : Math_operator("*⬚") {};
+Multiply::Multiply() : Operator("*⬚") {};
 
-Math_operator *const Multiply::get_object()
+Operator *const Multiply::get_object()
 {
     return new Multiply;
 };

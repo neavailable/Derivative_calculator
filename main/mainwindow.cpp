@@ -1,16 +1,16 @@
 #include "mainwindow.h"
-#include "functions/functions_with_arguments/Sin.h"
-#include "functions/functions_with_arguments/Cos.h"
-#include "functions/functions_with_arguments/Tg.h"
-#include "functions/functions_with_arguments/Ctg.h"
-#include "functions/functions_with_arguments/Exp.h"
-#include "functions/functions_without_arguments/X.h"
-#include "functions/functions_without_arguments/Number.h"
-#include "operators/Plus.h"
-#include "operators/Minus.h"
-#include "operators/Multiply.h"
-#include "operators/Division.h"
-#include "functions/functions_without_arguments/Dot.h"
+#include "../all_math_operations/functions/functions_with_arguments/Sin.h"
+#include "../all_math_operations/functions/functions_with_arguments/Cos.h"
+#include "../all_math_operations/functions/functions_with_arguments/Tg.h"
+#include "../all_math_operations/functions/functions_with_arguments/Ctg.h"
+#include "../all_math_operations/functions/functions_with_arguments/Exp.h"
+#include "../all_math_operations/functions/functions_without_arguments/X.h"
+#include "../all_math_operations/functions/functions_without_arguments/Number.h"
+#include "../all_math_operations/operators/Plus.h"
+#include "../all_math_operations/operators/Minus.h"
+#include "../all_math_operations/operators/Multiply.h"
+#include "../all_math_operations/operators/Division.h"
+#include "../all_math_operations/functions/functions_without_arguments/Dot.h"
 #include "../my_qstr_methods/My_QStr_methods.h"
 
 
@@ -40,7 +40,7 @@ void MainWindow::on_funcs_clicked(Base_func *func_)
     if (entered_pow) control_buttons->block_for_pow();
 };
 
-void MainWindow::on_operators_clicked(Math_operator *math_operator)
+void MainWindow::on_operators_clicked(Operator *math_operator)
 {
     control_buttons->block_for_operators();
 

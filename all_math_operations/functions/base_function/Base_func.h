@@ -1,17 +1,17 @@
 #pragma once
 
-#include "base_class/Base_operation.h"
-#include "operators/Math_operator.h"
-#include "../../derivated_func/Func.h"
+#include "../../base_class/Base_operation.h"
+#include "../../operators/Operator.h"
+#include "../../../derivated_func/Func.h"
 
 
-class Math_operator;
+class Operator;
 
 class Base_func : public Base_operation
 {
 private:
     Base_func *external_func, *arg;
-    Math_operator *left_operator, *right_operator;
+    Operator *left_operator, *right_operator;
 
     QString pow;
 
@@ -32,8 +32,8 @@ public:
 
     Base_func *&get_arg();
     Base_func *&get_external_func();
-    Math_operator *&get_left_operator();
-    Math_operator *&get_right_operator();
+    Operator *&get_left_operator();
+    Operator *&get_right_operator();
 
     const bool can_get_derivative() const override;
 

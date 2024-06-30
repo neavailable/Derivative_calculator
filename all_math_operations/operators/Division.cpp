@@ -3,10 +3,10 @@
 #include "Multiply.h"
 
 
-Division::Division() : Math_operator("/⬚") {};
+Division::Division() : Operator("/⬚") {};
 
 
-Math_operator *const Division::get_object()
+Operator *const Division::get_object()
 {
     return new Division;
 };
@@ -28,8 +28,8 @@ Base_func *Division::get_derivative_for_operands(Func &derivative_func)
             );
 
     derivative_func.add_operator_to_funcs(new Multiply);
-
-    Math_operator *temp_operator = get_right_arg()->get_right_operator();
+    
+    Operator *temp_operator = get_right_arg()->get_right_operator();
     get_right_arg()->get_right_operator() = nullptr;
 
     get_right_arg()->make_derivative(get_right_arg(), derivative_func);

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "functions/base_function/Base_func.h"
-#include "operators/Math_operator.h"
+#include "../all_math_operations/functions/base_function/Base_func.h"
+#include "../all_math_operations/operators/Operator.h"
 #include "control_buttons/Control_buttons.h"
 
 
 class Base_func;
 
-class Math_operator;
+class Operator;
 
 class Func
 {
@@ -28,7 +28,7 @@ public:
     Func &operator=(Func &&)      = delete;
 
     void add_func_to_funcs(Base_func *const func);
-    void add_operator_to_funcs(Math_operator *const math_operator);
+    void add_operator_to_funcs(Operator *const math_operator);
 
     void enter_pow();
     void go_to_external_func();

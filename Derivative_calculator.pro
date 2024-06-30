@@ -9,51 +9,51 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    base_class/Base_operation.cpp \
+    all_math_operations/base_class/Base_operation.cpp \
+    all_math_operations/functions/base_function/Base_func.cpp \
+    all_math_operations/functions/functions_with_arguments/Cos.cpp \
+    all_math_operations/functions/functions_with_arguments/Ctg.cpp \
+    all_math_operations/functions/functions_with_arguments/Exp.cpp \
+    all_math_operations/functions/functions_with_arguments/Func_with_args.cpp \
+    all_math_operations/functions/functions_with_arguments/Sin.cpp \
+    all_math_operations/functions/functions_with_arguments/Tg.cpp \
+    all_math_operations/functions/functions_without_arguments/Dot.cpp \
+    all_math_operations/functions/functions_without_arguments/Func_without_args.cpp \
+    all_math_operations/functions/functions_without_arguments/Number.cpp \
+    all_math_operations/functions/functions_without_arguments/X.cpp \
+    all_math_operations/operators/Division.cpp \
+    all_math_operations/operators/Minus.cpp \
+    all_math_operations/operators/Multiply.cpp \
+    all_math_operations/operators/Operator.cpp \
+    all_math_operations/operators/Plus.cpp \
     control_buttons/Control_buttons.cpp \
     derivated_func/Func.cpp \
-    functions/base_function/Base_func.cpp \
-    functions/functions_with_arguments/Cos.cpp \
-    functions/functions_with_arguments/Ctg.cpp \
-    functions/functions_with_arguments/Exp.cpp \
-    functions/functions_with_arguments/Func_with_args.cpp \
-    functions/functions_with_arguments/Sin.cpp \
-    functions/functions_with_arguments/Tg.cpp \
-    functions/functions_without_arguments/Dot.cpp \
-    functions/functions_without_arguments/Func_without_args.cpp \
-    functions/functions_without_arguments/Number.cpp \
-    functions/functions_without_arguments/X.cpp \
     main/main.cpp \
     main/mainwindow.cpp \
     my_qstr_methods/My_QStr_methods.cpp \
-    operators/Division.cpp \
-    operators/Math_operator.cpp \
-    operators/Minus.cpp \
-    operators/Multiply.cpp \
-    operators/Plus.cpp
 
 HEADERS += \
-    base_class/Base_operation.h \
+    all_math_operations/base_class/Base_operation.h \
+    all_math_operations/functions/base_function/Base_func.h \
+    all_math_operations/functions/functions_with_arguments/Cos.h \
+    all_math_operations/functions/functions_with_arguments/Ctg.h \
+    all_math_operations/functions/functions_with_arguments/Exp.h \
+    all_math_operations/functions/functions_with_arguments/Func_with_args.h \
+    all_math_operations/functions/functions_with_arguments/Sin.h \
+    all_math_operations/functions/functions_with_arguments/Tg.h \
+    all_math_operations/functions/functions_without_arguments/Dot.h \
+    all_math_operations/functions/functions_without_arguments/Func_without_args.h \
+    all_math_operations/functions/functions_without_arguments/Number.h \
+    all_math_operations/functions/functions_without_arguments/X.h \
+    all_math_operations/operators/Division.h \
+    all_math_operations/operators/Minus.h \
+    all_math_operations/operators/Multiply.h \
+    all_math_operations/operators/Operator.h \
+    all_math_operations/operators/Plus.h \
     control_buttons/Control_buttons.h \
     derivated_func/Func.h \
-    functions/base_function/Base_func.h \
-    functions/functions_with_arguments/Cos.h \
-    functions/functions_with_arguments/Ctg.h \
-    functions/functions_with_arguments/Exp.h \
-    functions/functions_with_arguments/Func_with_args.h \
-    functions/functions_with_arguments/Sin.h \
-    functions/functions_with_arguments/Tg.h \
-    functions/functions_without_arguments/Dot.h \
-    functions/functions_without_arguments/Func_without_args.h \
-    functions/functions_without_arguments/Number.h \
-    functions/functions_without_arguments/X.h \
     main/mainwindow.h \
     my_qstr_methods/My_QStr_methods.h \
-    operators/Division.h \
-    operators/Math_operator.h \
-    operators/Minus.h \
-    operators/Multiply.h \
-    operators/Plus.h
 
 FORMS += \
     qt_files/graphics/mainwindow.ui

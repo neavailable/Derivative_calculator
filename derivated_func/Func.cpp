@@ -68,7 +68,7 @@ void Func::add_func_to_funcs(Base_func *const func)
 // third if create a new func and add it to the tree. this func is arg of previous func
 // last else has been created when user want to add func after entering the operator
 
-void Func::add_operator_to_funcs(Math_operator *const math_operator)
+void Func::add_operator_to_funcs(Operator *const math_operator)
 {
     curr_func->get_right_operator() = math_operator;
     curr_func->get_right_operator()->get_left_arg() = curr_func;

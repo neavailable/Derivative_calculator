@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Math_operator.h"
+#include "Operator.h"
 
 
-class Minus : public Math_operator
+class Minus : public Operator
 {
 public:
     Minus();
@@ -13,7 +13,7 @@ public:
     Minus &operator=(const Minus &) = delete;
     Minus &operator=(Minus &&)      = delete;
 
-    Math_operator *const get_object() override;
+    Operator *const get_object() override;
     Base_func *get_derivative_for_operands(Func &derivative_func) override;
 
     ~Minus();

@@ -1,7 +1,7 @@
 #include "Base_func.h"
-#include "functions/functions_without_arguments/Number.h"
-#include "../../my_qstr_methods/My_QStr_methods.h"
-#include "operators/Multiply.h"
+#include "../functions_without_arguments/Number.h"
+#include "../../../my_qstr_methods/My_QStr_methods.h"
+#include "../../operators/Multiply.h"
 
 
 Base_func::Base_func(const QString name_, const QString pow_) :
@@ -19,12 +19,12 @@ Base_func *&Base_func::get_external_func()
     return external_func;
 };
 
-Math_operator *&Base_func::get_left_operator()
+Operator *&Base_func::get_left_operator()
 {
     return left_operator;
 };
 
-Math_operator *&Base_func::get_right_operator()
+Operator *&Base_func::get_right_operator()
 {
     return right_operator;
 };

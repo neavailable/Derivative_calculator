@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Math_operator.h"
+#include "Operator.h"
 
 
-class Multiply : public Math_operator
+class Multiply : public Operator
 {
 public:
     Multiply();
@@ -12,7 +12,7 @@ public:
     Multiply &operator=(const Multiply &) = delete;
     Multiply &operator=(Multiply &&)      = delete;
 
-    Math_operator *const get_object() override;
+    Operator *const get_object() override;
     Base_func *get_derivative_for_operands(Func &derivative_func) override;
 
     ~Multiply();

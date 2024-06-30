@@ -1,6 +1,6 @@
 #pragma once
 
-#include "functions/base_function/Base_func.h"
+#include "../base_function/Base_func.h"
 
 
 class Func_with_args : public Base_func
