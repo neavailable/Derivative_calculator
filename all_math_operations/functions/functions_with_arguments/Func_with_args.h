@@ -17,4 +17,3 @@ public:
 
     virtual ~Func_with_args() = 0;
 };
-

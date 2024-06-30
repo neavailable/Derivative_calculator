@@ -60,4 +60,3 @@ Base_func *Division::get_derivative_for_operands(Func &derivative_func)
 // that make because we want to add at the end a^2
 
 Division::~Division() = default;
-
