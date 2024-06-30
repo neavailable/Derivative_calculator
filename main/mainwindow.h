@@ -4,6 +4,7 @@
 #include "ui_mainwindow.h"
 #include "derivated_func/Func.h"
 #include "control_buttons/Control_buttons.h"
+#include <QClipboard>
 
 
 QT_BEGIN_NAMESPACE
@@ -27,6 +28,7 @@ private:
 
     void on_funcs_clicked(Base_func *func);
     void on_operators_clicked(Operator *math_operator);
+    void coppy_from_label(const QString &text);
 private slots:
     void on_sin_butt_clicked();
     void on_cos_butt_clicked();
@@ -58,7 +60,10 @@ private slots:
 
     void on_enter_butt_clicked();
 
-    void on_AC_butt_clicked();    
+    void on_AC_butt_clicked();
+
+    void on_copy_func_butt_clicked();
+    void on_copy_derivative_butt_clicked();
 public:
     MainWindow(QWidget *parent = nullptr);
 

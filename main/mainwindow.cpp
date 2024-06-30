@@ -26,6 +26,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->enter_label->setText( func.get_qstr_func() );
 
     control_buttons->block_at_beginning();
+
+    setWindowTitle("Derivative calculator");
 };
 
 void MainWindow::on_funcs_clicked(Base_func *func_)
@@ -47,6 +49,12 @@ void MainWindow::on_operators_clicked(Operator *math_operator)
     func.add_operator_to_funcs(math_operator);
 
     ui->enter_label->setText( func.get_qstr_func() );
+};
+
+void MainWindow::coppy_from_label(const QString &text)
+{
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(text);
 };
 
 void MainWindow::on_sin_butt_clicked()
@@ -205,6 +213,16 @@ void MainWindow::on_AC_butt_clicked()
     ui->result_label->clear();
 
     entered_pow = false;
+};
+
+void MainWindow::on_copy_func_butt_clicked()
+{
+    coppy_from_label( ui->enter_label->text() );
+};
+
+void MainWindow::on_copy_derivative_butt_clicked()
+{
+    coppy_from_label( ui->result_label->text() );
 };
 
 MainWindow::~MainWindow()

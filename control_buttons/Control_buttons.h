@@ -10,17 +10,19 @@ class Control_buttons
 private:
     Ui::MainWindow *ui;
 
-    static const size_t all_butts_size             = 25,
+    static const size_t all_butts_size             = 27,
                         funcs_with_args_butts_size = 5,
                         digits_buts_size           = 10,
                         operators_butts_size       = 5,
-                        other_butts_size           = 3;
+                        other_butts_size           = 3,
+                        copy_butts_size            = 2;
 
     QPushButton *all_butts            [all_butts_size],
                 *funcs_with_args_butts[funcs_with_args_butts_size],
                 *digits_buts          [digits_buts_size],
                 *operators_butts      [operators_butts_size],
-                *other_butts          [other_butts_size];
+                *other_butts          [other_butts_size],
+                *copy_butts           [copy_butts_size];
 
     void un_block_buttons(QPushButton *buttons[], const size_t size, const bool un_block);
     void block_all();

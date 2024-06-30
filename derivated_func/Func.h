@@ -4,7 +4,6 @@
 #include "../all_math_operations/operators/Operator.h"
 #include "control_buttons/Control_buttons.h"
 
-
 class Base_func;
 
 class Operator;

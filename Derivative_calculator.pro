@@ -56,9 +56,11 @@ HEADERS += \
     my_qstr_methods/My_QStr_methods.h \
 
 FORMS += \
-    qt_files/graphics/mainwindow.ui
+    graphics/mainwindow.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
