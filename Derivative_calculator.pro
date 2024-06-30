@@ -1,4 +1,4 @@
-QT       += core gui
+# QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,44 +9,54 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Base_func.cpp \
-    Base_operation.cpp \
-    Cos.cpp \
-    Ctg.cpp \
-    Dot.cpp \
-    Exp.cpp \
-    Func.cpp \
-    Func_with_args.cpp \
-    Func_without_args.cpp \
-    Math_operator.cpp \
-    My_QStr_methods.cpp \
-    Number.cpp \
-    Sin.cpp \
-    Tg.cpp \
-    X.cpp \
-    main.cpp \
-    mainwindow.cpp
+    all_math_operations/base_class/Base_operation.cpp \
+    all_math_operations/functions/base_function/Base_func.cpp \
+    all_math_operations/functions/functions_with_arguments/Cos.cpp \
+    all_math_operations/functions/functions_with_arguments/Ctg.cpp \
+    all_math_operations/functions/functions_with_arguments/Exp.cpp \
+    all_math_operations/functions/functions_with_arguments/Func_with_args.cpp \
+    all_math_operations/functions/functions_with_arguments/Sin.cpp \
+    all_math_operations/functions/functions_with_arguments/Tg.cpp \
+    all_math_operations/functions/functions_without_arguments/Dot.cpp \
+    all_math_operations/functions/functions_without_arguments/Func_without_args.cpp \
+    all_math_operations/functions/functions_without_arguments/Number.cpp \
+    all_math_operations/functions/functions_without_arguments/X.cpp \
+    all_math_operations/operators/Division.cpp \
+    all_math_operations/operators/Minus.cpp \
+    all_math_operations/operators/Multiply.cpp \
+    all_math_operations/operators/Operator.cpp \
+    all_math_operations/operators/Plus.cpp \
+    control_buttons/Control_buttons.cpp \
+    derivated_func/Func.cpp \
+    main/main.cpp \
+    main/mainwindow.cpp \
+    my_qstr_methods/My_QStr_methods.cpp \
 
 HEADERS += \
-    Base_func.h \
-    Base_operation.h \
-    Cos.h \
-    Ctg.h \
-    Dot.h \
-    Exp.h \
-    Func.h \
-    Func_with_args.h \
-    Func_without_args.h \
-    Math_operator.h \
-    My_QStr_methods.h \
-    Number.h \
-    Sin.h \
-    Tg.h \
-    X.h \
-    mainwindow.h
+    all_math_operations/base_class/Base_operation.h \
+    all_math_operations/functions/base_function/Base_func.h \
+    all_math_operations/functions/functions_with_arguments/Cos.h \
+    all_math_operations/functions/functions_with_arguments/Ctg.h \
+    all_math_operations/functions/functions_with_arguments/Exp.h \
+    all_math_operations/functions/functions_with_arguments/Func_with_args.h \
+    all_math_operations/functions/functions_with_arguments/Sin.h \
+    all_math_operations/functions/functions_with_arguments/Tg.h \
+    all_math_operations/functions/functions_without_arguments/Dot.h \
+    all_math_operations/functions/functions_without_arguments/Func_without_args.h \
+    all_math_operations/functions/functions_without_arguments/Number.h \
+    all_math_operations/functions/functions_without_arguments/X.h \
+    all_math_operations/operators/Division.h \
+    all_math_operations/operators/Minus.h \
+    all_math_operations/operators/Multiply.h \
+    all_math_operations/operators/Operator.h \
+    all_math_operations/operators/Plus.h \
+    control_buttons/Control_buttons.h \
+    derivated_func/Func.h \
+    main/mainwindow.h \
+    my_qstr_methods/My_QStr_methods.h \
 
 FORMS += \
-    mainwindow.ui
+    qt_files/graphics/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
