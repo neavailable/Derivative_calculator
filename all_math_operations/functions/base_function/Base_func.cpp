@@ -74,6 +74,7 @@ void Base_func::add_args_to_derivative(Base_func *const curr, Func &derivative_f
     {
         if (add_to_qstr)
             My_QStr_methods::add_func_to_qstr( derivative_func.get_qstr_func(), curr->get_qstr_name(), curr->get_pow() );
+
         else
             derivative_func.add_func_to_funcs( curr->get_object() );
     }
@@ -169,10 +170,3 @@ void Base_func::make_derivative(Base_func *const curr, Func &derivative_func)
 // entered a * b or a / b, but it was clarified Multiply and Division classes.
 
 Base_func::~Base_func() = default;
-
-
-// 1) здєлай меседж бох -
-
-// 2) зроби шоб можна було вйобувать мінус перед виразом -
-
-// 3) здєлай навяси -
