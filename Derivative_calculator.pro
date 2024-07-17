@@ -56,7 +56,7 @@ HEADERS += \
     my_qstr_methods/My_QStr_methods.h \
 
 FORMS += \
-    graphics/mainwindow.ui \
+    graphics/ui/mainwindow.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

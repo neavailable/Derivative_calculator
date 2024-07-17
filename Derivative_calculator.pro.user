@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 13.0.2, 2024-07-17T02:25:15. -->
+<!-- Written by QtCreator 13.0.2, 2024-07-17T20:46:33. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -248,7 +248,7 @@
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/код/Derivative_calculator/build/Desktop_Qt_6_7_2_MinGW_64_bit-Profile</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/код/Derivative_calculator/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
