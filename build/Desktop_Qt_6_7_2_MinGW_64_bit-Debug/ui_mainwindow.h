@@ -138,10 +138,10 @@ public:
 
         copy_func_butt = new QPushButton(frame_1);
         copy_func_butt->setObjectName("copy_func_butt");
-        copy_func_butt->setMaximumSize(QSize(60, 60));
+        copy_func_butt->setMaximumSize(QSize(50, 50));
         QIcon icon(QIcon::fromTheme(QString::fromUtf8("edit-copy")));
         copy_func_butt->setIcon(icon);
-        copy_func_butt->setIconSize(QSize(45, 45));
+        copy_func_butt->setIconSize(QSize(40, 40));
 
         gridLayout_2->addWidget(copy_func_butt, 1, 1, 1, 1);
 
@@ -154,9 +154,9 @@ public:
 
         copy_derivative_butt = new QPushButton(frame_1);
         copy_derivative_butt->setObjectName("copy_derivative_butt");
-        copy_derivative_butt->setMaximumSize(QSize(60, 60));
+        copy_derivative_butt->setMaximumSize(QSize(50, 50));
         copy_derivative_butt->setIcon(icon);
-        copy_derivative_butt->setIconSize(QSize(45, 45));
+        copy_derivative_butt->setIconSize(QSize(40, 40));
 
         gridLayout_2->addWidget(copy_derivative_butt, 5, 1, 1, 1);
 

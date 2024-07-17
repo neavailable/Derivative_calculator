@@ -142,8 +142,8 @@
         <widget class="QPushButton" name="copy_func_butt">
          <property name="maximumSize">
           <size>
-           <width>60</width>
-           <height>60</height>
+           <width>50</width>
+           <height>50</height>
           </size>
          </property>
          <property name="text">
@@ -154,8 +154,8 @@
          </property>
          <property name="iconSize">
           <size>
-           <width>45</width>
-           <height>45</height>
+           <width>40</width>
+           <height>40</height>
           </size>
          </property>
         </widget>
@@ -182,8 +182,8 @@
         <widget class="QPushButton" name="copy_derivative_butt">
          <property name="maximumSize">
           <size>
-           <width>60</width>
-           <height>60</height>
+           <width>50</width>
+           <height>50</height>
           </size>
          </property>
          <property name="text">
@@ -194,8 +194,8 @@
          </property>
          <property name="iconSize">
           <size>
-           <width>45</width>
-           <height>45</height>
+           <width>40</width>
+           <height>40</height>
           </size>
          </property>
         </widget>
