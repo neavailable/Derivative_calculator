@@ -20,3 +20,5 @@ You can also enter a power of the function. To enter it you need to press power 
 In order to escape from power mode you need to press arrow button 
 
 ![](graphics/images/escape_from_pow_mode.png)
+
+Also you can copy entered function or derivative function by pressing copy button
