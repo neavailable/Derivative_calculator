@@ -7,7 +7,7 @@ Now you can see the start of the program. For correcting input some buttons are 
 
 The Dotted square showes where are you now. After entering a function it will be inside it automatically
 
-![](graphics/images/entered_func_screen.png)
+![](graphics/images/entered_func_screen1\.png)
 
 If you want you can manage him by pressing the arrow button
 
