@@ -5,10 +5,10 @@
 
 class My_QStr_methods
 {
-private:
+private: 
     static void swap_symbols(QString &func, const size_t ind1, const size_t ind2);
     static const QString add_pow_to_name(QString &func_, QString &pow);
-public:
+public: 
     My_QStr_methods();
 
     My_QStr_methods(const My_QStr_methods &)            = delete;
