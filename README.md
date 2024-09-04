@@ -1,5 +1,5 @@
 ## How to use it
-____
+___
 
 Now you can see the start of the program. For correcting input some buttons are blocked:
 
