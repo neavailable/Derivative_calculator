@@ -37,7 +37,7 @@ First inputed math operator (head) must be a function. Let's take any fucntion a
 graph TD
     COS(cos)
     X_COS(x)
-    MULTIPLY(*)
+    MULTIPLY(\*)
     X(x)
 
     COS      --> X_COS
