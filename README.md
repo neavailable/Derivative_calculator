@@ -53,20 +53,20 @@ graph TD
 As you can see, multiply operator is locating on the left (because it is operator of cos) and x is locating on the right (because it is arguments of cos)
 Next scheme represents function ***cos(sin(4 * x) * x + 3) * x + 13***:
 
-```mermaid
+```
 graph TD
     COS(cos)
     SIN(sin)
     FOUR(4)
-    MULTIPLY_SIN(\*)
+    MULTIPLY_SIN(*)
     X_SIN(x)
     X_COS(x)
-    MULTIPLY_COS(\*)
-    PLUS_COS(\+)
+    MULTIPLY_COS(*)
+    PLUS_COS(+)
     THREE(3)
-    MULTIPLY(\*)
+    MULTIPLY(*)
     X(x)
-    PLUS(\+)
+    PLUS(+)
     THIRTEEN(13)
 
     COS          --> SIN
