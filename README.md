@@ -62,11 +62,11 @@ graph TD
     X_SIN(x)
     X_COS(x)
     MULTIPLY_COS(\*)
-    PLUS_COS(+)
+    PLUS_COS(\+)
     THREE(3)
     MULTIPLY(\*)
     X(x)
-    PLUS(+)
+    PLUS(\+)
     THIRTEEN(13)
 
     COS          --> SIN
