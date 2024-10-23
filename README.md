@@ -58,7 +58,7 @@ graph TD
     COS(cos)
     SIN(sin)
     FOUR(4)
-    MULTIPLY_SIN(*)
+    MULTIPLY_SIN(\*)
     X_SIN(x)
     X_COS(x)
     MULTIPLY_COS(*)
